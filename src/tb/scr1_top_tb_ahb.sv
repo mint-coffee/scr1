@@ -257,7 +257,7 @@ always_ff @(posedge clk) begin
     else if (~&rst_cnt) rst_cnt <= rst_cnt + 1'b1;
 end
 
-
+/*verilator timing_off*/
 `ifdef SCR1_DBG_EN
 initial begin
     trst_n  = 1'b0;
@@ -270,6 +270,7 @@ initial begin
     #100ns tms      = 1'b1;
 end
 `endif // SCR1_DBG_EN
+/*verilator timing_on*/
 
 
 
